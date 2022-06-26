@@ -1,0 +1,62 @@
+#VRML_SIM R2022a utf8
+WorldInfo {
+  info [
+    "Willow Garage PR2 robot."
+    "The robot model includes 44 actuated joints, 6 cameras and 2 laser-scanners."
+  ]
+  title "PR2"
+  basicTimeStep 16
+  contactProperties [
+    ContactProperties {
+      material2 "pr2_material"
+      softCFM 1e-05
+    }
+  ]
+}
+Viewpoint {
+  orientation -0.2257032056564809 -0.007094229047537991 0.9741702802234368 3.202813126232806
+  position 7.453289359105656 0.11138346126217502 3.5989544197894894
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+  castShadows FALSE
+}
+Pr2 {
+  rotation 1 0 0 4.692820414042842e-06
+  controller "pr2_rework"
+  supervisor TRUE
+  baseSlot [
+    Camera {
+      translation 2.5 0 2
+      rotation -0.34607614512881407 0 0.9382064281237792 3.14
+      name "external_camera"
+      width 320
+      height 140
+    }
+  ]
+}
+Floor {
+  tileSize 1 1
+  appearance Parquetry {
+  }
+}
+Table {
+  translation 1.5 0 0
+  rotation -2.9110807192479472e-08 0.013910303436853236 0.9999032470485799 -5.307179586466759e-06
+}
+DEF CAN Can {
+  translation 1.52 -0.19 0.805
+  rotation 1 0 0 4.692820414042842e-06
+}
+#DEF BBOX BiscuitBox {
+ # translation 1.34 0.73 0.86
+  #rotation 0.9999999999944997 -2.830029999984434e-06 1.7296499999904866e-06 1.5708
+#}
+DEF MARKER SolidBox {
+  translation 1.15 0.15 0.741
+  size 0.1 0.1 1e-07
+  appearance PBRAppearance {
+    baseColor 0 1 0
+  }
+}
